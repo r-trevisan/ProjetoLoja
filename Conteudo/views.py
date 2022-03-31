@@ -10,7 +10,7 @@ que o usuário vê.
 
 def diga_ola(request):
     # aqui podemos pegar/transformar dados de um database, enviar emails, etc...
-    return HttpResponse('Olá Mundão!')
+    return render(request, 'ola.html', { 'name': 'Rafa'})
 
 '''
 após definida a função devemos mapear até a URL, para que quando a URL receber
