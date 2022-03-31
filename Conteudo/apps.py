@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ConteudoConfig(AppConfig):
+class conteudoConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Conteudo'
+    name = 'conteudo'
