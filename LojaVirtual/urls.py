@@ -14,8 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 
+
+# Quando enviar uma request para conteudo/ola o Django sabe que toda
+# request que é solicitada ao módulo conteudo deverá ser trabalhada por 
+# esta app, sendo ela a main.
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('conteudo/ola', include('conteudo.urls'))
 ]
