@@ -6,7 +6,7 @@ Aplicativos Django acessam e gerenciam dados através de objetos Python chamados
 Modelos definem a estrutura dos dados armazenados, incluindo os tipos de campos e possivelmente também o seu tamanho máximo,
 valores default, opções de listas de seleção, texto de ajuda para documentação, texto de labels para formulários, etc.
 
-Foram inseridas relações OneToOne, OneToMany e ManyToMany.
+Foram inseridas relações OneToOne, OneToMany e ManyToMany, bem como relações circulares e genéricas.
 """
 
 class Promocao(models.Model):
@@ -16,6 +16,8 @@ class Promocao(models.Model):
 
 class Acervo(models.Model):
     titulo = models.CharField(max_length=255)
+    produto_em_destaque = models.ForeignKey(
+        'Produto', on_delete=models.SET_NULL, null=True, related_name='+')
 
 
 class Produto(models.Model):
